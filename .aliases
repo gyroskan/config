@@ -1,0 +1,4 @@
+alias sshgyroskan="ssh gyroskan@ssh.gyroskan.com"
+alias cdgo="cd ~/go/src/github.com/gyroskan/"
+alias pytest="pytest -v"
+alias alias="sl"
