@@ -1,4 +1,5 @@
 alias sshgyroskan="ssh gyroskan@ssh.gyroskan.com"
 alias cdgo="cd ~/go/src/github.com/gyroskan/"
 alias pytest="pytest -v"
-alias alias="sl"
+alias screenshot="import png:- | xclip -selection clipboard -t image/png"
+alias luminosity="xrandr --output eDP --brightness" 
