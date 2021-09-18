@@ -191,19 +191,20 @@ gaps outer $outergap
 
 # Set colors from Xresources
 set_from_resource $fg i3wm.color1 #ff0000
+set_from_resource $bg-fg i3wm.color2 #ff0000
 set_from_resource $bg i3wm.color4 #ff0000
 set_from_resource $fg-alt i3wm.color5 #ff0000
 set_from_resource $bg-alt i3wm.color6 #ff0000
 
-# class                      border                backgr.   text       indicator     child_border
-client.focused               #ff0000               #00ff00   #FFFF00    #000000       $fg-alt
-client.unfocused             #ff0000               #00ff00   #FFFF00    #000000       $fg
-client.urgent                #ff0000               #00ff00   #FFFF00    #000000       $bg
-client.placeholder           #ff0000               #00ff00   #FFFF00    #000000       $bg
-client.focused_inactive      #ff0000               #00ff00   #FFFF00    #000000       $bg
+# class                      border                backgr.       text       indicator     child_border
+client.focused               $bg                   #6500ff4a     #6dd0be    #000000       $fg-alt
+client.unfocused             $fg-alt               #3800bb2e     $bg-fg     #000000       $fg
+client.urgent                $bg                   #00ff00       #FFFF00    #000000       $bg
+client.placeholder           $bg                   #00ff00       #FFFF00    #000000       $bg
+client.focused_inactive      $bg                   #6500ff4a     #6dd0be    #000000       $bg
 
 client.background   #FFFFFF
-exec_always wal -R
+exec_always --no-startup-id wal -R
 # Dmenu colors
 bindsym $mod+d exec dmenu_run -i -nb "$bg-alt" -nf "$fg-alt" -sb "$fg" -sf "$bg"
 
@@ -221,4 +222,4 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to turn off?' -B 'Yes, turn off' 'shutdown now'"
 bindsym $mod+Shift+s exec import png:- | xclip -selection clipboard -t image/png
 # picom (opacity effects)
-exec_always picom -f
+exec_always --no-startup-id picom -f
