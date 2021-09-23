@@ -1,0 +1,8 @@
+[oh-my-zsh]
+    hide-dirty = 1
+[core]
+    pager = less -F -X
+[includeIf "gitdir/i:~/epita/"]
+    path = .epita.gitconfig
+[includeIf "gitdir/i:~/projects/"]
+    path = .gyroskan.gitconfig

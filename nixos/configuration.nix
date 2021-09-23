@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./zephyrus.nix
+      ./gyroskan.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -16,7 +18,6 @@
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -24,6 +25,7 @@
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
+  networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.wlp2s0.useDHCP = true;
 
@@ -41,19 +43,26 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
   # Enable the Plasma 5 Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
   
 
   services = {
+    # Enable CUPS to print documents.
     printing.enable = true;
+
+    blueman.enable = true;
+
     xserver = {
       enable = true;
+      # Configure keymap in X11
       layout = "fr";
       xkbOptions = "eurosign:e";
-      
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      libinput.enable = true;
+
       desktopManager = {
         xterm.enable = false;
       };
@@ -73,32 +82,36 @@
     };
   };
 
-
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  # Enable docker service
+  virtualisation.docker.enable = true; 
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.gyroskan = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
+  hardware = {
+    pulseaudio.enable = true;
+    bluetooth.enable = true;
   };
 
-
-  # Allow specific packages
+  # Enable zsh
+  programs = {
+    zsh.enable = true;
+    steam.enable = true;
+  };
+  
+  # Allow licences for specifics packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
     "discord"
+    "steam"
+    "steam-runtime"
+    "steam-original"
+    "clion"
+    "datagrip"
+    "goland"
+    "rider"
+    "pycharm-comunity"
+    "webstorm"
     ];
 
   # List packages installed in system profile. To search, run:
@@ -130,9 +143,14 @@
     gzip
     htop
     imagemagick
+    jetbrains.clion
+    jetbrains.datagrip
+    jetbrains.goland
+    jetbrains.pycharm-community
+    jetbrains.rider
+    jetbrains.webstorm
     man-db
     man-pages
-    picom
     python3
     screen
     sshfs
