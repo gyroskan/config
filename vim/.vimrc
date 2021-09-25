@@ -22,6 +22,38 @@ set colorcolumn=80
 
 " Remove trailing spaces for .c and .h files
 autocmd BufWritePre *.[ch] :%s/\s\+$//e
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins part
+call plug#begin('~/.vim/plugged')
+" Plug 'dylanaraps/wal.vim'
+
+" Plug 'valloric/youcompleteme'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+
+call plug#end()
+
+" colorscheme wal
+
+
+
+
+
+
+
+
+
+
+
+
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
 let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
