@@ -38,6 +38,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'isobit/vim-caddyfile'
 
 call plug#end()
 
