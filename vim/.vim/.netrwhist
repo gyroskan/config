@@ -1,4 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
-let g:netrw_dirhist_2='/mnt/c/Users/babag/Local Settings'
-let g:netrw_dirhist_1='/mnt/e/Documents/Epita/S3/Algo/DM1_PrefixTree/prefixtrees-baptiste.nehme'
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/piscine/.git'
+let g:netrw_dirhist_4='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/dlist_advanced/tests'
+let g:netrw_dirhist_3='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/zigzag_matrix'
+let g:netrw_dirhist_2='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/zigzag_matrix/tests'
+let g:netrw_dirhist_1='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/dlist_advanced'
+let g:netrw_dirhist_0='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/sieve_eratosthenes_advanced/tests'
+let g:netrw_dirhist_9='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/my_itoa_base/tests'
+let g:netrw_dirhist_8='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/int_vector_hill'
+let g:netrw_dirhist_7='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/dlist/tests'
+let g:netrw_dirhist_6='/afs/cri.epita.fr/user/b/ba/baptiste.nehme/u/piscine/baptiste.nehme-piscine-2024/dlist_advanced/tests'
