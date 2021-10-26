@@ -8,8 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./zephyrus.nix
-      ./gyroskan.nix
+      ./computers/zephyrus.nix
+      ./desktops/i3.nix
+      ./programs/jetbrains.nix
+      ./programs/dev_ocaml.nix
+      ./users/gyroskan.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -37,7 +40,7 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "fr";
+    keyMap = "us";
   };
 
   # Enable the X11 windowing system.
@@ -57,28 +60,11 @@
     xserver = {
       enable = true;
       # Configure keymap in X11
-      layout = "fr";
+      layout = "us";
       xkbOptions = "eurosign:e";
 
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
-
-      desktopManager = {
-        xterm.enable = false;
-      };
-      displayManager = {
-        defaultSession = "none+i3";
-      };
-
-      windowManager.i3 = {
-        enable = true;
-        package = pkgs.i3-gaps;
-        extraPackages = with pkgs; [
-          dmenu
-          i3status
-          i3lock
-        ];
-      };
     };
   };
 
@@ -103,15 +89,15 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
     "discord"
-    "steam"
-    "steam-runtime"
-    "steam-original"
     "clion"
     "datagrip"
     "goland"
     "rider"
     "pycharm-comunity"
     "webstorm"
+    "steam"
+    "steam-runtime"
+    "steam-original"
     ];
 
   # List packages installed in system profile. To search, run:
@@ -123,13 +109,13 @@
     bison
     check
     clang
+    clang-tools
     cmake
     criterion
     curl
     discord
     docker
     doxygen
-    emacs
     feh
     findutils
     firefox
@@ -143,12 +129,6 @@
     gzip
     htop
     imagemagick
-    jetbrains.clion
-    jetbrains.datagrip
-    jetbrains.goland
-    jetbrains.pycharm-community
-    jetbrains.rider
-    jetbrains.webstorm
     man-db
     man-pages
     python3

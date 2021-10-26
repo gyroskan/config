@@ -44,7 +44,8 @@ call plug#end()
 
 " colorscheme wal
 
-
+set splitbelow
+set splitright
 
 
 
