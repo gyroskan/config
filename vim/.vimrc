@@ -38,6 +38,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/aftersyntaxc.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
 Plug 'isobit/vim-caddyfile'
 
 call plug#end()
