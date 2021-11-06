@@ -38,9 +38,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/aftersyntaxc.vim'
 Plug 'isobit/vim-caddyfile'
 
 call plug#end()
+
+" NERDtree bindings
+nnoremap <C-o> :NERDTreeToggle<CR>
 
 " colorscheme wal
 
