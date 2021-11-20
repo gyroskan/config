@@ -8,8 +8,6 @@ set expandtab
 set number
 " set background=dark
 
-colorscheme virtuose
-
 " Better auto-completion for commands
 set wildmenu
 
@@ -22,6 +20,7 @@ set colorcolumn=80
 
 " Remove trailing spaces for .c and .h files
 autocmd BufWritePre *.[ch] :%s/\s\+$//e
+
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -39,7 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/aftersyntaxc.vim'
 Plug 'isobit/vim-caddyfile'
 
@@ -48,7 +46,12 @@ call plug#end()
 " NERDtree bindings
 nnoremap <C-o> :NERDTreeToggle<CR>
 
+
 " colorscheme wal
+colorscheme virtuose
+
+" Enable use of mouse
+set mouse=a
 
 set splitbelow
 set splitright

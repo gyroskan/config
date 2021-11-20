@@ -2,6 +2,9 @@
     hide-dirty = 1
 [core]
     pager = less -F -X
+[user]
+    name = "baptiste nehme"
+    email = "baptiste.nehme@epita.fr"
 [includeIf "gitdir/i:~/epita/"]
     path = .epita.gitconfig
 [includeIf "gitdir/i:~/projects/"]
