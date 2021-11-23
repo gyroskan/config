@@ -2,6 +2,7 @@
     hide-dirty = 1
 [core]
     pager = less -F -X
+    editor = vim
 [user]
     name = "baptiste nehme"
     email = "baptiste.nehme@epita.fr"
