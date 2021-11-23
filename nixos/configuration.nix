@@ -107,12 +107,14 @@
     automake
     bash
     bison
+    colordiff
     check
     clang
     clang-tools
     cmake
     criterion
     curl
+    dash
     discord
     docker
     doxygen
@@ -131,6 +133,9 @@
     imagemagick
     man-db
     man-pages
+    meson
+    ninja
+    pavucontrol
     python3
     screen
     sshfs
@@ -141,6 +146,7 @@
     vlc
     vscode
     wget
+    unzip
     zip
     zsh
   ];
