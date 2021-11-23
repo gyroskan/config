@@ -106,6 +106,7 @@
     autoconf
     automake
     bash
+    binutils
     bison
     colordiff
     check
@@ -138,6 +139,7 @@
     pavucontrol
     python3
     screen
+    shellcheck
     sshfs
     thunderbird
     tree
