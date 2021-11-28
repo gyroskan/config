@@ -100,9 +100,21 @@
     "steam-original"
     ];
 
+  # HACK: this is needed to be able to compile with external libs such as
+  # criterion  | readline 
+  environment.pathsToLink = [ "/include" "/lib" ];
+  environment.extraOutputsToInstall = [ "out" "lib" "bin" "dev" ];
+  environment.variables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
+    NIX_CFLAGS_COMPILE = "-I/run/current-system/sw/include";
+    NIX_CFLAGS_LINK = "-L/run/current-system/sw/lib";
+    PKG_CONFIG_PATH = "/run/current-system/sw/lib/pkgconfig";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pkg-config
     autoconf
     automake
     bash
@@ -115,6 +127,7 @@
     cmake
     criterion
     curl
+    sl
     dash
     discord
     docker
@@ -137,7 +150,9 @@
     meson
     ninja
     pavucontrol
+    patchelf
     python3
+    readline
     screen
     shellcheck
     sshfs
