@@ -3,6 +3,8 @@
 { config, pkgs, lib,  ... }:
 
 {
+  networking.interfaces.wlp2s0.useDHCP = true;
+
   fileSystems."/mnt/windows" =
     { 
       device = "/dev/disk/by-label/OS";

@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./computers/zephyrus.nix
+      # ./computers/zephyrus.nix
+      ./computers/desktop-IGH3J7T.nix
       ./desktops/i3.nix
       ./programs/jetbrains.nix
       ./programs/dev_ocaml.nix
@@ -30,7 +31,6 @@
   # replicates the default behaviour.
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
-  networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -106,6 +106,7 @@
     autoconf
     automake
     bash
+    binutils
     bison
     colordiff
     check
@@ -138,6 +139,7 @@
     pavucontrol
     python3
     screen
+    shellcheck
     sshfs
     thunderbird
     tree
