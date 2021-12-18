@@ -12,7 +12,6 @@
       ./computers/desktop-IGH3J7T.nix
       ./desktops/i3.nix
       ./programs/jetbrains.nix
-      ./programs/dev_ocaml.nix
       ./users/gyroskan.nix
     ];
 
@@ -104,17 +103,24 @@
   # criterion  | readline 
   environment.pathsToLink = [ "/include" "/lib" ];
   environment.extraOutputsToInstall = [ "out" "lib" "bin" "dev" ];
-  environment.variables = {
+  environment.variables = {     
     NIXPKGS_ALLOW_UNFREE = "1";
-    NIX_CFLAGS_COMPILE = "-I/run/current-system/sw/include";
-    NIX_CFLAGS_LINK = "-L/run/current-system/sw/lib";
+    NIX_CFLAGS_COMPILE_x86_64_unknown_linux_gnu = "-I/run/current-system/sw/include";
+    NIX_CFLAGS_LINK_x86_64_unknown_linux_gnu = "-L/run/current-system/sw/lib";
     PKG_CONFIG_PATH = "/run/current-system/sw/lib/pkgconfig";
-  };
+  }; 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     pkg-config
+    # put gcc in first to get use as cc
+    gcc
+
+    # C libraries
+    criterion
+    readline
+
     autoconf
     automake
     bash
@@ -125,18 +131,17 @@
     clang
     clang-tools
     cmake
-    criterion
     curl
     sl
     dash
     discord
     docker
     doxygen
+    dunst
     feh
     findutils
     firefox
     flex
-    gcc
     gdb
     gparted
     git
@@ -152,7 +157,6 @@
     pavucontrol
     patchelf
     python3
-    readline
     screen
     shellcheck
     sshfs
