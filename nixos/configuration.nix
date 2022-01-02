@@ -8,9 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./computers/zephyrus.nix
-      ./computers/desktop-IGH3J7T.nix
+      ./computers/zephyrus.nix
       ./desktops/i3.nix
+      ./programs/nodejs.nix
+      ./programs/vscode.nix
       ./programs/jetbrains.nix
       ./users/gyroskan.nix
     ];
@@ -85,45 +86,33 @@
   };
   
   # Allow licences for specifics packages
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vscode"
-    "discord"
-    "clion"
-    "datagrip"
-    "goland"
-    "rider"
-    "pycharm-comunity"
-    "webstorm"
-    "steam"
-    "steam-runtime"
-    "steam-original"
-    ];
+  nixpkgs.config.allowUnfree = true;
 
   # HACK: this is needed to be able to compile with external libs such as
   # criterion  | readline 
   environment.pathsToLink = [ "/include" "/lib" ];
   environment.extraOutputsToInstall = [ "out" "lib" "bin" "dev" ];
-  environment.variables = {     
+  environment.variables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     NIX_CFLAGS_COMPILE_x86_64_unknown_linux_gnu = "-I/run/current-system/sw/include";
     NIX_CFLAGS_LINK_x86_64_unknown_linux_gnu = "-L/run/current-system/sw/lib";
     PKG_CONFIG_PATH = "/run/current-system/sw/lib/pkgconfig";
-  }; 
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkg-config
-    # put gcc in first to get use as cc
-    gcc
-
-    # C libraries
-    criterion
-    readline
+    # put gcc in first to get use as cc                                         
+    gcc                                                                         
+                                                                                
+    # C libraries                                                               
+    criterion                                                                   
+    readline 
 
     autoconf
     automake
     bash
+    bat
     binutils
     bison
     colordiff
@@ -148,28 +137,36 @@
     gnumake
     groff
     gzip
+    gtop
     htop
     imagemagick
+    insomnia
+    keychain
     man-db
     man-pages
+    mdcat
     meson
+    neofetch
     ninja
     pavucontrol
     patchelf
     python3
+    rofi
     screen
     shellcheck
     sshfs
     thunderbird
     tree
-    valgrind    
+    valgrind
     vim
     vlc
-    vscode
     wget
     unzip
     zip
     zsh
+
+    # At the end so all the libraries installed are taken into account
+    pkg-config
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

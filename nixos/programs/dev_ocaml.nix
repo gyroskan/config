@@ -3,7 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     emacs
-    pkg-config
+    # uncomment if not in the including config
+    # pkg-config
     xorg.libX11
     ocaml
     ocamlPackages.findlib
