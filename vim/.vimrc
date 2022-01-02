@@ -40,6 +40,7 @@ Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/aftersyntaxc.vim'
 Plug 'isobit/vim-caddyfile'
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 
