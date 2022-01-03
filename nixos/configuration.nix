@@ -13,6 +13,7 @@
       ./programs/nodejs.nix
       ./programs/vscode.nix
       ./programs/jetbrains.nix
+      ./programs/office.nix
       ./users/gyroskan.nix
     ];
 
@@ -104,66 +105,75 @@
   environment.systemPackages = with pkgs; [
     # put gcc in first to get use as cc                                         
     gcc                                                                         
-                                                                                
-    # C libraries                                                               
-    criterion                                                                   
+
+    # C libraries
+    criterion
     readline 
 
-    autoconf
-    automake
-    bash
+    # Shell utilities
     bat
-    binutils
-    bison
+    bash
     colordiff
-    check
-    clang
-    clang-tools
-    cmake
     curl
-    sl
     dash
-    discord
-    docker
-    doxygen
-    dunst
-    feh
+    fd
+    file
     findutils
-    firefox
-    flex
-    gdb
-    gparted
     git
-    gnumake
-    groff
     gzip
     gtop
     htop
-    imagemagick
-    insomnia
     keychain
+    killall
     man-db
     man-pages
     mdcat
-    meson
-    neofetch
-    ninja
-    pavucontrol
     patchelf
-    python3
-    rofi
+    neofetch
     screen
-    shellcheck
     sshfs
-    thunderbird
-    tree
-    valgrind
+    shellcheck
     vim
-    vlc
     wget
     unzip
+    xclip
     zip
     zsh
+
+    # Pdf reader
+    pdfpc
+
+    # Dev basics
+    autoconf
+    automake
+    binutils
+    bison
+    clang
+    clang-tools
+    cmake
+    docker
+    doxygen
+    flex
+    gdb
+    gnumake
+    insomnia
+    meson
+    ninja
+    python3
+    valgrind
+
+    # Others
+    discord
+    dunst
+    feh
+    firefox
+    gparted
+    imagemagick
+    pavucontrol
+    rofi
+    thunderbird
+    tree
+    vlc
 
     # At the end so all the libraries installed are taken into account
     pkg-config
