@@ -175,6 +175,10 @@
     tree
     vlc
 
+    # Used for keeping secrets
+    gnome.gnome-keyring
+    libsecret
+
     # At the end so all the libraries installed are taken into account
     pkg-config
   ];
