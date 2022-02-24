@@ -3,6 +3,8 @@
 { config, pkgs, lib, ... }:
 
 {
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   fileSystems = 
   {
     "/mnt/windows/ssd" = 
