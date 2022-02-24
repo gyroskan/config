@@ -5,7 +5,7 @@
     vscode-fhs
     vscode-extensions.ms-vscode.cpptools
     vscode-extensions.ms-dotnettools.csharp
-    vscode-extensions.golang.Go
+    vscode-extensions.golang.go
   ];
 
  # 
