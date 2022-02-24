@@ -10,5 +10,5 @@ alias ltags="git tag --list --sort=-creatordate -n2"
 alias mathieulebg="echo \"c'est vrai\""
 alias sysleep="systemctl suspend"
 alias date_check='for dir in $(ls ./); do echo $(cd $dir && git log -1 --format=%cD): $dir; done'
-alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20"
-alias cppclang="clang++ -Wall -Wextra -Werror -pedantic -std=c++20"
+alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
+alias cppclang="clang++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
