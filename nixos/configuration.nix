@@ -176,6 +176,9 @@
     tree
     vlc
 
+    # GUI for networking
+    gnome.networkmanagerapplet
+
     # Used for keeping secrets
     gnome.gnome-keyring
     libsecret
