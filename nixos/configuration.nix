@@ -104,11 +104,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # put gcc in first to get use as cc                                         
-    gcc                                                                         
+    gcc11
 
     # C libraries
     criterion
-    readline 
+    readline81
+    gtest
 
     # Shell utilities
     bat
@@ -148,7 +149,7 @@
     automake
     binutils
     bison
-    clang
+    clang_13
     clang-tools
     cmake
     docker
