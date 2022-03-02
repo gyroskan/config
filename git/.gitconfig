@@ -10,3 +10,5 @@
     path = .epita.gitconfig
 [includeIf "gitdir/i:~/projects/"]
     path = .gyroskan.gitconfig
+[pull]
+	rebase = false
