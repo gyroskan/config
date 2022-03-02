@@ -109,6 +109,7 @@
     # C libraries
     criterion
     readline81
+    boost174
     gtest
 
     # Shell utilities
@@ -158,12 +159,14 @@
     gdb
     gnumake
     insomnia
+    libtool
     meson
     ninja
     python3
     valgrind
 
     # Others
+    go
     discord
     dunst
     feh
