@@ -111,6 +111,7 @@
     readline81
     boost174
     gtest
+    m4
 
     # Shell utilities
     bat
@@ -153,6 +154,7 @@
     clang_13
     clang-tools
     cmake
+    pre-commit
     docker
     doxygen
     flex
@@ -163,6 +165,7 @@
     meson
     ninja
     python3
+    python3Packages.pip
     valgrind
 
     # Others
