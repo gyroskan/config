@@ -1,14 +1,27 @@
+# SSH
 alias sshgyroskan="ssh gyroskan@ssh.gyroskan.com"
-alias cdgo="cd ~/go/src/github.com/gyroskan/"
+
+# C - C++
+alias ccompil="gcc -Wall -Wextra -Werror -std=c99 -pedantic -g"
+alias ccompiltest="gcc -Wall -Wextra -Werror -std=c99 -g -pedantic -lcriterion"
+alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
+alias cppclang="clang++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
+
+# Python
 alias pytest="pytest -v"
+
+# Utils
 alias screenshot="import png:- | xclip -selection clipboard -t image/png"
 alias luminosity="xrandr --output eDP --brightness" 
 alias monitor2="xrandr --output HDMI-A-0 --mode 1920x1080 --right-of eDP"
-alias ccompil="gcc -Wall -Wextra -Werror -std=c99 -pedantic -g"
-alias ccompiltest="gcc -Wall -Wextra -Werror -std=c99 -g -pedantic -lcriterion"
-alias ltags="git tag --list --sort=-creatordate -n2"
-alias mathieulebg="echo \"c'est vrai\""
 alias sysleep="systemctl suspend"
+
+alias cdgo="cd ~/go/src/github.com/gyroskan/"
+alias mathieulebg="echo \"c'est vrai\""
+
+# GIT
+alias gll="git log --decorate --oneline"
+alias gpt="git push --follow-tags"
+alias gta='git tag -m DONE -a'
+alias ltags="git tag --list --sort=-creatordate -n2"
 alias date_check='for dir in $(ls ./); do echo $(cd $dir && git log -1 --format=%cD): $dir; done'
-alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
-alias cppclang="clang++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
