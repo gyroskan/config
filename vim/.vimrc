@@ -31,6 +31,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " Plug 'dylanaraps/wal.vim'
 
+Plug 'vim-airline/vim-airline'
 " Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'

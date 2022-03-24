@@ -4,7 +4,7 @@ alias sshgyroskan="ssh gyroskan@ssh.gyroskan.com"
 # C - C++
 alias ccompil="gcc -Wall -Wextra -Werror -std=c99 -pedantic -g"
 alias ccompiltest="gcc -Wall -Wextra -Werror -std=c99 -g -pedantic -lcriterion"
-alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
+alias cppcompil="g++ -Wall -Wextra -Werror -pedantic -std=c++20 -g -fsanitize=address"
 alias cppclang="clang++ -Wall -Wextra -Werror -pedantic -std=c++20 -g"
 
 # Python
