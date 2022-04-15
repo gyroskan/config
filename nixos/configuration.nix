@@ -67,6 +67,7 @@
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
     };
+    gnome.gnome-keyring.enable = true;
   };
 
   # Enable docker service
@@ -114,8 +115,8 @@
     m4
 
     # Shell utilities
-    bat
     bash
+    bat
     colordiff
     curl
     dash
@@ -123,39 +124,40 @@
     file
     findutils
     git
-    gzip
     gtop
+    gzip
     htop
     keychain
     killall
     man-db
     man-pages
     mdcat
-    patchelf
     neofetch
+    patchelf
     screen
-    sshfs
     shellcheck
+    sshfs
+    unzip
     vim
     wget
-    unzip
     xclip
     zip
     zsh
 
     # Pdf reader
     pdfpc
+    evince
 
     # Dev basics
     autoconf
     automake
     binutils
     bison
-    clang_13
     clang-tools
+    clang_13
     cmake
-    pre-commit
     docker
+    docker-compose
     doxygen
     flex
     gdb
@@ -164,20 +166,26 @@
     libtool
     meson
     ninja
+    pre-commit
     python3
     python3Packages.pip
     valgrind
 
     # Others
-    go
+    betterlockscreen
     discord
     dunst
     feh
     firefox
+    flameshot
+    github-runner
+    go
     gparted
     imagemagick
     pavucontrol
+    picom
     rofi
+    thefuck
     thunderbird
     tree
     vlc
