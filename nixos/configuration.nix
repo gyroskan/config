@@ -179,7 +179,7 @@
     firefox
     flameshot
     github-runner
-    go
+    go_1_17
     gparted
     imagemagick
     pavucontrol
