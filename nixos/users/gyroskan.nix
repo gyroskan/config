@@ -6,6 +6,6 @@
       isNormalUser = true;
       createHome = true;
       shell = pkgs.zsh;
-      extraGroups = [ "wheel" "docker" "networkmanager" ];
+      extraGroups = [ "wheel" "docker" "networkmanager" "dialout" ];
   };
 }

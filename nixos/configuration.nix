@@ -179,7 +179,7 @@
     firefox
     flameshot
     github-runner
-    go_1_17
+    go_1_18
     gparted
     imagemagick
     pavucontrol
@@ -191,7 +191,7 @@
     vlc
 
     # GUI for networking
-    gnome.networkmanagerapplet
+    networkmanagerapplet
 
     # Used for keeping secrets
     gnome.gnome-keyring
