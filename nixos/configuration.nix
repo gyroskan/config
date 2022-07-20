@@ -92,6 +92,11 @@
     zsh.enable = true;
     steam.enable = true;
   };
+
+  ssh = {
+    agentTimeout = "2h";
+    startAgent = true;
+  };
   
   # Allow licences for specifics packages
   nixpkgs.config.allowUnfree = true;
