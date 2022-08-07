@@ -51,6 +51,12 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
   
+  nix.autoOptimiseStore = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 20d";
+  };
 
   services = {
     # Enable CUPS to print documents.
@@ -85,6 +91,11 @@
   programs = {
     zsh.enable = true;
     steam.enable = true;
+  };
+
+  ssh = {
+    agentTimeout = "2h";
+    startAgent = true;
   };
   
   # Allow licences for specifics packages

@@ -109,6 +109,3 @@ source $HOME/.aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# opam configuration
-test -r /home/gyroskan/.opam/opam-init/init.zsh && . /home/gyroskan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
