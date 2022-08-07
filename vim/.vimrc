@@ -48,6 +48,9 @@ call plug#end()
 " NERDtree bindings
 nnoremap <C-o> :NERDTreeToggle<CR>
 
+" cd into file directory and print the pwd
+" nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+command CDC cd %:p:h
 
 " colorscheme wal
 colorscheme virtuose
