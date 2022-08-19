@@ -89,13 +89,13 @@
 
   # Enable zsh
   programs = {
+    vim.defaultEditor = true;
     zsh.enable = true;
     steam.enable = true;
-  };
-
-  ssh = {
-    agentTimeout = "2h";
-    startAgent = true;
+    ssh = {
+      agentTimeout = "2h";
+      startAgent = true;
+    };
   };
   
   # Allow licences for specifics packages
