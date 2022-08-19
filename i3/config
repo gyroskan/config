@@ -241,12 +241,12 @@ bindsym $mod+d exec rofi -show combi
 #        status_command i3status
 #}
 
-# polybar (replace i3status bar)
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
-
 # Bind firefox and shutdown
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to turn off?' -B 'Yes, turn off' 'shutdown now'"
+bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to turn off?' -B 'Yes, shut up' 'systemctl poweroff'"
 bindsym $mod+Shift+s exec "flameshot gui"
 # picom (opacity effects)
 exec_always --no-startup-id picom -f
+
+# polybar (replace i3status bar)
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
