@@ -3,7 +3,7 @@
 all_yes="$1"
 echo "$all_yes"
 
-function ask() {
+ask() {
     if [ "$all_yes" = "-y" ]; then
         return 0;
     fi
@@ -19,9 +19,10 @@ function ask() {
     fi
 }
 
-function dl_plugin() {
-    echo "Downloading $2..."
-    if git clone -q "https://github.com/$1" "${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}/plugins/$2"; then
+dl_plugin() {
+    PLUGIN_PATH="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/"
+    echo "Downloading $2 in $PLUGIN_PATH..."
+    if git clone -q "https://github.com/$1" "$PLUGIN_PATH$2"; then
         echo "Done."
     else
         echo "Failed."
