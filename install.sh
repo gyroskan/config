@@ -29,6 +29,10 @@ dl_plugin() {
     fi
 }
 
+if ask 'Do you need to install oh-my-zsh?'; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 if ask 'Do you want to download oh-my-zsh plugins?'; then
     # Download all the plugins from their github repos
     dl_plugin 'agkozak/zsh-z' 'zsh-z'
