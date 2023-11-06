@@ -4,11 +4,13 @@
     pager = less -F -X
     editor = vim
 [user]
-    name = "baptiste nehme"
+    name = "Baptiste Nehmé"
     email = "baptiste.nehme@epita.fr"
 [includeIf "gitdir/i:~/epita/"]
     path = .epita.gitconfig
 [includeIf "gitdir/i:~/projects/"]
     path = .gyroskan.gitconfig
 [pull]
-	rebase = false
+    rebase = true
+[rebase]
+    autostash = true
