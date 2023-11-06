@@ -25,3 +25,6 @@ alias gpt="git push --follow-tags"
 alias gta='git tag -m DONE -a'
 alias ltags="git tag --list --sort=-creatordate -n2"
 alias date_check='for dir in $(ls ./); do echo $(cd "$dir" && git log -1 --format=%cD): "$dir"; done'
+
+# NIX
+alias nsp="nix-shell -p"
