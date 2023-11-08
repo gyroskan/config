@@ -248,5 +248,8 @@ bindsym $mod+Shift+s exec "flameshot gui"
 # picom (opacity effects)
 exec_always --no-startup-id picom -f
 
+# fusuma Touchpad gestures
+exec_always --no-startup-id fusuma -d
+
 # polybar (replace i3status bar)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
